@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Danh sách LTV</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css&js/cssofproject.css">
+	<script type="text/javascript" language="javascript" src="../css&js/list.js"></script>
+</head>
+<body class="">
+	<h1 align="center"> Danh sách lập trình viên </h1>
+	<table id="table" align="center" class="List">
+		<tr >
+			<th> STT </th>
+			<th> Ảnh đại diện </th>
+			<th> Họ và tên </th>
+			<th> Ngày sinh </th>
+			<th> Địa chỉ </th>
+			<th> Bằng cấp </th>
+			<th></th>
+		</tr>
+	</table>
+	<script >
+		var n =document.getElementById("table");
+		
+		for (var i = 0; i < list.length; i++){
+		n.innerHTML+="<tr>"+
+			"<td>"+ (i+1) + "</td>" +
+			"<td><img src='"+list[i].Avatar+"'>" + "</td>"+
+			"<td>"+ list[i].Name + "</td>" +
+			"<td>"+ list[i].Birthday + "</td>"+
+			"<td>"+ list[i].Address + "</td>"+
+			"<td>"+ list[i].Degree + "</td>"+
+			"<td><a href='Detail.html' target='_blank' onclick='Detail11("+ i +")' >"+ list[i].Detail + "</a>" + "</td>"+
+		"</tr>";
+		
+};
+	function Detail11(x){
+		sessionStorage.setItem("Detaill",x);
+	};
+	</script>
+</body>
+</html>

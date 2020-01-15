@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css&js/cssofproject.css">
+	<script type="text/javascript" language="javascript" src="../css&js/list.js"></script>
+</head>
+<body class="Detail">
+	<h1> Chi tiết lập trình viên</h1>	
+		<div id= "image" class="avatar"></div>
+		<div>
+		<table id="info" border="1px" class="tableDetail">
+		</table>
+		</div>
+		<table id="info1" border="1px" class="tableDetail2">
+			<tr>
+			<th> Tên ngôn ngữ lập trình </th>	
+			<th> Số năm kinh nghiệm </th>
+			</tr>
+		</table>	
+	<script>
+		var get =sessionStorage.getItem("Detaill");
+		function Add(a, b){
+		var m = document.getElementById('info');
+		m.innerHTML += "<tr>"+
+			"<th>" + a + "</th>" +
+			"<td>" + b + "</td>" +
+		"</tr>";
+		};		
+		Add("Tên lập trình viên" , list[get].Name);
+		Add("Năm sinh", list[get].Birthday);
+		Add("Bằng cấp" , list[get].Degree);
+		Add("Địa chỉ" , list[get].Address);
+		
+		var listSkills = list[get].Skills;
+		var o = document.getElementById("info1")
+		for (var i = 0; i < listSkills.length; i++) {
+			o.innerHTML+= "<tr>" +
+			"<td>" + listSkills[i].LanguageName + "</td>" +
+			"<td>" + listSkills[i].Exp + "</td>"+		
+			"</tr>";
+		};
+			var img= document.getElementById('image').innerHTML= "<img src='" + list[get].Avatar+ "'>";
+
+		
+	</script>
+</body>
+</html>
